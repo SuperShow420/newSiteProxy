@@ -4,12 +4,14 @@ const cors = require('cors')
 const app = express()
 const cheerio = require('cheerio');
 
+app.use(cors());
+app.use(express.json());
+
+
 app.listen(port, () => {
     console.log("listening on port 80")
 })
 
-app.use(cors());
-app.use(express.json());
 
 import('node-fetch').then((module) => {
     const fetch = module.default;
